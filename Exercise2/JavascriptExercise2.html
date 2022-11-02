@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+    <body>
+        <p>Please enter a year:</p>
+        <form id="form" action="/Exercise2/JavascriptExercise2.html">
+            <input type="number" id="year"><br>
+            <input type="button" name="button" onclick="isLeapYear()" value="Submit">
+        </form>
+        <script>
+            function isLeapYear(){
+                var yearForm = document.getElementById('year').value;
+                var leapYear = yearForm + " is a leap year.";
+                var notLeapYear = yearForm + " is not a leap year.";
+                if(yearForm % 4 == 0){
+                    if(yearForm % 100 == 0){
+                        if(yearForm % 400 == 0){
+                            document.getElementById('leapyear').innerHTML = leapYear;
+                        }
+                    }
+                } else { document.getElementById('leapyear').innerHTML = notLeapYear;}
+            }
+        </script>
+        <div id="leapyear"></div>
+    </body>
+</html>

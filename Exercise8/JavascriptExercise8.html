@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+    <body>
+        <p>Please enter a word or number:</p>
+        <form id="form" action="/Exercise6/JavascriptExercise6.html">
+            <input type="text" id="code"><br>
+            <input type="button" name="button" onclick="reverse()" value="Submit">
+        </form>
+        <script>
+            function reverse(){
+                var startCode = document.getElementById('code').value;
+                var reversedCode = startCode.split("").sort().join("");
+                document.getElementById('reversed').innerHTML = reversedCode;
+            }
+        </script>
+        <div id="reversed"></div>
+    </body>
+</html>

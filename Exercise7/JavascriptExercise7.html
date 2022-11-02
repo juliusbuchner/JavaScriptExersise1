@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+    <body>
+        <p>Please enter a word or number:</p>
+        <form id="form" action="/Exercise7/JavascriptExercise7.html">
+            <input type="text" id="code"><br>
+            <input type="button" name="button" onclick="prepSplit()" value="Submit">
+        </form>
+        <script lang="javascript">
+            function splitCode(result, left, right){
+                result.push(left.concat(right));
+                if (right.length > 1){
+                    for(var i = 1; i < right.length; i++){
+                        splitCode(result, left.concat(right.substring(0, i)), right.substring(i));
+                    }
+                }
+                
+                return result;
+            };
+            function prepSplit(){
+                var prepCode = document.getElementById('code').value;
+                var split = splitCode([], [], prepCode);
+                document.getElementById('splited').innerHTML = split;
+            };
+        </script>
+        <div id="splited"></div>
+    </body>
+</html>

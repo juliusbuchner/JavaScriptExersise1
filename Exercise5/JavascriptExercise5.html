@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+    <title>
+        Days until Christmas
+    </title>
+    <script type="text/javascript" charset="utf-8">
+        function countdown(){
+            var oneDay = 24 * 60 * 60 * 1000;
+            var today = new Date();
+            var christmas = new Date();
+            christmas.setMonth(12-1);
+            christmas.setDate(24);
+            var diffDays = Math.round(Math.abs((christmas.getTime() - today.getTime()) / (oneDay)));
+            document.getElementById('txt').innerHTML = "Days till Christmas: " + diffDays;
+            var t = setTimeout(countdown, 500);
+        }
+    </script>
+</head>
+    <body onload="countdown()">
+        <div id="txt"></div>
+    </body>
+</html>

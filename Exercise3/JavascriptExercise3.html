@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+    <body>
+        <p>Please enter a year:</p>
+        <form id="form" action="/Exercise3/JavascriptExercise3.html">
+            <input type="number" id="year"><br>
+            <input type="button" name="button" onclick="firstSunday()" value="Submit">
+        </form>
+        <script>
+            function firstSunday(){
+                var D = new Date();
+                var yearForm = document.getElementById('year').value;
+                D.setFullYear(yearForm, 0, 1);
+                var d = D.getDay();
+                var weekday = ["Sunday", "Monday", "Tuesday", "Wednesday",
+            "Thursday", "Friday", "Saturday"];
+                var isSunday = "The first of " + yearForm + " is a Sunday.";
+                var isNotSunday = "The first of " + yearForm + " is not a Sunday.";
+                if(weekday[d] == "Sunday"){
+                    document.getElementById('sunday').innerHTML = isSunday;;
+                } else {
+                    document.getElementById('sunday').innerHTML = isNotSunday;
+                }
+            }
+        </script>
+        <div id="sunday"></div>
+    </body>
+</html>

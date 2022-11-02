@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+    <body>
+        <p>Please enter a number:</p>
+        <form id="form" action="/Exercise10/JavascriptExercise10.html">
+            <input type="number" id="code"><br>
+            <input type="button" name="button" onclick="check()" value="Submit">
+        </form>
+        <script>
+            function check(){
+                var number = document.getElementById('code').value;
+                if(number % i === 0){
+                    document.getElementById('prime').innerHTML = number +
+                    " is not a prime number.";
+                } else { document.getElementById('prime').innerHTML = number +
+                    " is a prime number.";}
+            }
+        </script>
+        <div id="prime"></div>
+    </body>
+</html>
